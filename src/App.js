@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import DateTimeForm from './components/DateTimeForm';
+import MessageTable from './components/MessageTable';
 import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <img
+        width="150px"
+        height="110px"
+        src="../images/logo.jpg"
+        alt="logo-fpt-university"
+      />
+      <h1>Date Time Checker</h1>
+      <DateTimeForm />
+      <MessageTable />
     </div>
   );
 }
