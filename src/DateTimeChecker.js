@@ -24,16 +24,28 @@ function DateTimeChecker() {
     }
 
     if (!isNumeric(day)) {
+      if (parseInt(day) <= 0) {
+        showMessage("Input data for day is out of range!");
+        return;
+      }
       showMessage("Input data for day is incorrect format!");
       return;
     }
 
     if (!isNumeric(month)) {
+      if (parseInt(month) < 1) {
+        showMessage("Input data for month is out of range!");
+        return;
+      }
       showMessage("Input data for month is incorrect format!");
       return;
     }
 
     if (!isNumeric(year)) {
+      if (parseInt(year) < 1000) {
+        showMessage("Input data for year is out of range!");
+        return;
+      }
       showMessage("Input data for year is incorrect format!");
       return;
     }
@@ -42,17 +54,17 @@ function DateTimeChecker() {
     const monthValue = parseInt(month);
     const yearValue = parseInt(year);
 
-    if (dayValue < 1 || dayValue > 31) {
+    if (parseInt(day) <= 0 || parseInt(day) > 31) {
       showMessage("Input data for day is out of range!");
       return;
     }
 
-    if (monthValue < 1 || monthValue > 12) {
+    if (parseInt(month) < 1 || parseInt(month) > 12) {
       showMessage("Input data for month is out of range!");
       return;
     }
 
-    if (yearValue < 1000 || yearValue > 3000) {
+    if (parseInt(year) < 1000 || parseInt(year) > 3000) {
       showMessage("Input data for year is out of range!");
       return;
     }
@@ -110,6 +122,7 @@ function DateTimeChecker() {
 
     return true;
   }
+
   function showMessage(message) {
     setMessage(message);
     setMessageVisible(true);
